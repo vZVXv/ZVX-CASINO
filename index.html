@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>ZVX CASINO v1.0.2 BETA</title>
+  <title>ZVX CASINO v1.0.3 BETA</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E🎰%3C/text%3E%3C/svg%3E">
   <style>
     /* === ГЛОБАЛЬНЫЕ СТИЛИ === */
@@ -67,7 +67,7 @@
   <div id="vignetteOverlay" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 99998; background: radial-gradient(circle at center, transparent 20%, black 150%); opacity: 0; transition: opacity 0.5s;"></div>
 
   <div class="hub-header">
-    <div class="neon-title">ZVX CASINO - (BETA)</div>
+    <div class="neon-title">ZVX CASINO - (BETA v3)</div>
     <div class="vitals-panel">
       <div class="stat-unit" title="Деньги">💰 <span id="hubWallet">0</span></div>
       <div class="stat-unit" title="Кредиты">🎰 <span id="hubCredits">0</span></div>
@@ -553,19 +553,48 @@
           </div>
           <button class="zvx-info-btn" id="infoBtn">?</button>
           <div class="zvx-info-modal" id="infoModal">
-            <div class="zvx-modal-content" style="width: 640px;">
-              <h3 style="font-size: 42px;">ТАБЛИЦА ВЫПЛАТ</h3>
-              <table>
-                <thead><tr><td>Тип ставки</td><td style="text-align:center">Чисел</td><td style="text-align:right">Выплата</td></tr></thead>
-                <tbody>
-                  <tr style="background: rgba(46,125,50,0.3); border-left: 6px solid #00ff00;"><td>Зеро (0)</td><td style="text-align:center">1</td><td style="text-align:right; color:#00ff00; font-weight:900;">35 к 1</td></tr>
-                  <tr><td>Любое число</td><td style="text-align:center">1</td><td style="text-align:right">10 к 1</td></tr>
-                  <tr><td>Колонна / Дюжина</td><td style="text-align:center">12</td><td style="text-align:right">2 к 1</td></tr>
-                  <tr><td>Цвет / Чет / 1-18</td><td style="text-align:center">18</td><td style="text-align:right">1 к 1</td></tr>
-                </tbody>
-              </table>
-              <button class="zvx-close-modal" id="closeInfo">ПОНЯТНО</button>
-            </div>
+             <div class="zvx-modal-content" style="width: 640px; max-width: 95vw; padding: 45px; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; border: 4px solid gold; border-radius: 30px;">
+        
+        <h3 style="margin: 0 0 35px; font-size: 42px; color: gold; text-transform: uppercase; letter-spacing: 5px; text-align: center; font-weight: 900;">ТАБЛИЦА ВЫПЛАТ</h3>
+        
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px; font-size: 24px;">
+            <thead>
+                <tr style="color: gold; font-size: 16px; text-transform: uppercase; letter-spacing: 2px;">
+                    <td style="padding-bottom: 15px;">Тип ставки</td>
+                    <td style="padding-bottom: 15px; text-align: center;">Чисел</td>
+                    <td style="padding-bottom: 15px; text-align: right;">Выплата</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: rgba(46, 125, 50, 0.3); border-left: 6px solid #00ff00;">
+                    <td style="padding: 20px 10px;">Зеленый Зеро (0)</td>
+                    <td style="padding: 20px 10px; text-align: center;">1</td>
+                    <td style="padding: 20px 10px; text-align: right; color: #00ff00; font-weight: 900; font-size: 32px;">35 к 1</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #333;">
+                    <td style="padding: 20px 10px;">Любое число</td>
+                    <td style="padding: 20px 10px; text-align: center;">1</td>
+                    <td style="padding: 20px 10px; text-align: right; font-weight: 700;">10 к 1</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #333;">
+                    <td style="padding: 20px 10px;">Колонна / Дюжина</td>
+                    <td style="padding: 20px 10px; text-align: center;">12</td>
+                    <td style="padding: 20px 10px; text-align: right; font-weight: 700;">2 к 1</td>
+                </tr>
+                <tr>
+                    <td style="padding: 20px 10px;">Цвет / Чет / 1-18</td>
+                    <td style="padding: 20px 10px; text-align: center;">18</td>
+                    <td style="padding: 20px 10px; text-align: right; font-weight: 700;">1 к 1</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="font-size: 18px; color: #aaa; line-height: 1.6; margin-bottom: 35px; text-align: left; padding: 20px; background: rgba(0,0,0,0.3); border-radius: 15px; border: 1px solid #333;">
+            * При выпадении <b style="color: #00ff00;">ЗЕРО (0)</b> все внешние ставки (цвет, четность, дюжины и др.) автоматически проигрывают.
+        </div>
+
+        <button class="zvx-close-modal" id="closeInfo" style="width: 100%; padding: 25px; font-size: 28px; font-weight: 900; background: gold; border: none; border-radius: 15px; cursor: pointer; text-transform: uppercase; letter-spacing: 3px; box-shadow: 0 10px 20px rgba(0,0,0,0.5);">ПОНЯТНО</button>
+    </div>
           </div>
         `;
         this.drawWheel();
@@ -830,8 +859,66 @@
             <div id="dropZoneWallet"><div style="font-size: 10px; color: #00ff00; font-weight: bold;">КОШЕЛЕК (КЛИК)</div><div style="font-size: 22px; font-weight: 900; color: #fff;"><span id="balanceValue">0</span></div></div>
           </div>
           <button class="zvx-info-btn" id="infoBtn">?</button>
-          <div class="zvx-info-modal" id="infoModal"><div class="zvx-modal-content" style="width: 450px;"><h3 style="font-size: 32px;">ПОКЕР</h3><button class="zvx-close-modal" id="closeInfo">ПОНЯТНО</button></div></div>
-        `;
+          <div class="zvx-info-modal" id="infoModal">
+    <div class="zvx-modal-content" style="width: 450px; max-width: 95vw; padding: 30px; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; border: 3px solid gold; border-radius: 25px; background: #111;">
+        
+        <h3 style="margin: 0 0 10px; font-size: 32px; color: gold; text-transform: uppercase; letter-spacing: 3px; text-align: center; font-weight: 900;">ПОКЕР</h3>
+        <p style="font-size: 14px; color: #888; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; text-align: center; border-bottom: 2px solid #333; padding-bottom: 15px;">Старшинство комбинаций</p>
+        
+        <div id="infoContent">
+            <table style="width: 100%; border-collapse: collapse; font-size: 16px; line-height: 1.4; margin-bottom: 20px;">
+                <tr style="background: rgba(255, 215, 0, 0.1); border-left: 5px solid gold;">
+                    <td style="padding: 8px 15px;"><b>Роял-Флеш</b></td>
+                    <td style="font-size: 13px; color: gold; text-align: right;">A-K-Q-J-10 одной масти</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px 15px; border-bottom: 1px solid #222;">Стрит-Флеш</td>
+                    <td style="font-size: 13px; color: #aaa; text-align: right; border-bottom: 1px solid #222;">5 карт одной масти подряд</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px 15px; border-bottom: 1px solid #222;">Каре</td>
+                    <td style="font-size: 13px; color: #aaa; text-align: right; border-bottom: 1px solid #222;">4 карты одного достоинства</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px 15px; border-bottom: 1px solid #222;">Фулл-Хаус</td>
+                    <td style="font-size: 13px; color: #aaa; text-align: right; border-bottom: 1px solid #222;">Тройка + Пара</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px 15px; border-bottom: 1px solid #222;">Флеш</td>
+                    <td style="font-size: 13px; color: #aaa; text-align: right; border-bottom: 1px solid #222;">5 любых карт одной масти</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px 15px; border-bottom: 1px solid #222;">Стрит</td>
+                    <td style="font-size: 13px; color: #aaa; text-align: right; border-bottom: 1px solid #222;">5 карт по порядку</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px 15px; border-bottom: 1px solid #222;">Сет (Тройка)</td>
+                    <td style="font-size: 13px; color: #aaa; text-align: right; border-bottom: 1px solid #222;">3 карты одного достоинства</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px 15px; border-bottom: 1px solid #222;">Две пары</td>
+                    <td style="font-size: 13px; color: #aaa; text-align: right; border-bottom: 1px solid #222;">2 + 2 карты</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px 15px;">Пара</td>
+                    <td style="font-size: 13px; color: #aaa; text-align: right;">2 карты одного достоинства</td>
+                </tr>
+            </table>
+
+            <!-- БЛОК ПРАВИЛ -->
+            <div style="text-align: left; background: #1a1a1a; padding: 15px; border-radius: 12px; border: 1px solid #333;">
+                <p style="margin: 0 0 8px; font-size: 14px; color: gold; border-bottom: 1px solid #333; padding-bottom: 5px; font-weight: 700;">ПРАВИЛА СТОЛА:</p>
+                <div style="font-size: 12px; color: #ccc; line-height: 1.6;">
+                    • <b>КОЛОДА:</b> Используется <b>52 карты</b> (без джокеров).<br>
+                    • <b style="color: #ff4444;">НИЧЬЯ:</b> Если комбинации игрока и казино полностью идентичны — <b>банк забирает казино</b>.
+                </div>
+            </div>
+        </div>
+
+        <button class="zvx-close-modal" id="closeInfo" style="margin-top: 30px; padding: 18px; font-size: 22px; font-weight: 900; width: 100%; border-radius: 12px; background: gold; border: none; color: black; cursor: pointer; text-transform: uppercase;">ПОНЯТНО</button>
+    </div>
+</div>
+		  `;
       }
       setupEvents() {
         const root = this.shadowRoot; const modal = root.getElementById('infoModal');
@@ -1023,9 +1110,73 @@
             <button id="hit-btn" class="btn" disabled>ЕЩЁ</button><button id="stand-btn" class="btn" disabled>ХВАТИТ</button>
             <div id="dropZoneWallet"><div style="font-size: 10px; color: #00ff00; font-weight: bold;">КОШЕЛЕК (КЛИК)</div><div style="font-size: 22px; font-weight: 900; color: #fff;">💰 <span id="balanceValue">0</span></div></div>
           </div>
-          <button class="zvx-info-btn" id="infoBtn">?</button>
-          <div class="zvx-info-modal" id="infoModal"><div class="zvx-modal-content" style="width: 440px;"><h3 style="font-size: 28px;">БЛЭКДЖЕК (21)</h3><button class="zvx-close-modal" id="closeInfo">ПОНЯТНО</button></div></div>
-        `;
+<button class="zvx-info-btn" id="infoBtn">?</button>
+
+<!-- Модальное окно Блэкджека -->
+<div class="zvx-info-modal" id="infoModal">
+    <!-- Увеличили ширину до 340px для читаемости -->
+<div class="zvx-modal-content" style="width: 440px; max-width: 95vw; padding: 30px; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; border: 3px solid gold; border-radius: 20px;">
+    
+    <h3 style="margin: 0 0 20px; font-size: 28px; color: gold; text-transform: uppercase; letter-spacing: 2px; text-align: center;">БЛЭКДЖЕК (21)</h3>
+    
+    <div id="infoContent">
+        <!-- БЛОК СТОИМОСТИ КАРТ -->
+        <div style="background: rgba(255,215,0,0.05); border: 1px solid #444; border-radius: 12px; padding: 18px; margin-bottom: 25px;">
+            <p style="margin: 0 0 12px; font-size: 18px; color: gold; text-align: center; border-bottom: 1px solid #444; padding-bottom: 8px; font-weight: 700;">СТОИМОСТЬ КАРТ</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-size: 15px; color: #fff; line-height: 1.4;">
+                <div style="border-right: 1px solid #444; padding-right: 10px;">
+                    <b style="color: gold; font-size: 17px;">A (Туз):</b><br>11 или 1 очко<br>
+                    <b style="color: gold; font-size: 17px;">K, Q, J:</b><br>10 очков
+                </div>
+                <div style="padding-left: 5px;">
+                    <b style="color: gold; font-size: 17px;">10 - 2:</b><br>По номиналу<br>
+                    <b style="color: gold; font-size: 17px;">Цель:</b><br>Набрать 21
+                </div>
+            </div>
+        </div>
+
+        <!-- ТАБЛИЦА ВЫПЛАТ -->
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 18px;">
+            <thead>
+                <tr style="color: #888; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">
+                    <td style="padding-bottom: 10px;">Событие</td>
+                    <td style="padding-bottom: 10px; text-align: right;">Выплата</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: rgba(46, 125, 50, 0.2); border-left: 4px solid #00ff00;">
+                    <td style="padding: 12px;">Победа / 21</td>
+                    <td style="padding: 12px; text-align: right; color: #00ff00; font-weight: 900; font-size: 22px;">x2.0</td>
+                </tr>
+                <tr style="background: rgba(255, 68, 68, 0.1); border-left: 4px solid #ff4444;">
+                    <td style="padding: 12px;">Ничья (Push)</td>
+                    <td style="padding: 12px; text-align: right; color: #ff4444; font-weight: 700;">Потеря</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+		
+		 <!-- БЛОК ПРАВИЛ -->
+            <div style="text-align: left; background: #1a1a1a; padding: 15px; border-radius: 12px; border: 1px solid #333;">
+                <p style="margin: 0 0 8px; font-size: 14px; color: gold; border-bottom: 1px solid #333; padding-bottom: 5px; font-weight: 700;">ПРАВИЛА СТОЛА:</p>
+                <div style="font-size: 12px; color: #ccc; line-height: 1.6;">
+				
+				Дилер обязан добирать карты до <b>жестких 17</b>.<br>
+            • Перебор (22+) — мгновенное поражение.<br>
+				
+				
+                    • <b>КОЛОДА:</b> Используется <b>52 карты</b> (без джокеров).<br>
+                    • <b style="color: #ff4444;">НИЧЬЯ:</b> Если комбинации игрока и казино полностью идентичны — <b>банк забирает казино</b>.
+                </div>
+            </div>
+		
+    </div>
+
+    <button class="zvx-close-modal" id="closeInfo" style="margin-top: 25px; padding: 15px; font-size: 18px; font-weight: 900; border-radius: 10px;">ПОНЯТНО</button>
+</div>
+ `;
       }
       createDeck() {
         const suits = ["♠", "♣", "♥", "♦"], values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]; this.deck = [];
